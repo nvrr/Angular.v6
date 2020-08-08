@@ -40,7 +40,40 @@
 
       </mat-list-item>
     </mat-list>
-  </div>
+
+    <mat-list *ngIf="commentForm.valid">
+      <mat-list-item>
+       <h4 matLine> {{commentForm.get('comment').value}} </h4>
+       <p matLine> {{commentForm.get('rating').value}} Stars</p>
+       <p matLine>
+          <span>  -- {{commentForm.get('author').value}}</span>
+       </p>
+      </mat-list-item>
+    </mat-list>
+     
+   
+       <form novalidate [formGroup]="commentForm" #cform="ngForm" (ngSubmit)="onSubmit()">
+       <p>
+        <mat-form-field class="full-width">
+          <input matInput formControlName="author" placeholder="Name" type="text" required>
+          <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
+        </mat-form-field>
+       
+     
+        <mat-slider thumbLabel tickInterval="1" mim="1" max="5" step="1" formControlName="rating"></mat-slider>
+     
+      
+        <mat-form-field class="full-width">
+          <textarea matInput formControlName="comment" placeholder="your Comment" type="text" rows=9 required></textarea>
+          <mat-error *ngIf="formErrors.comment">{{formErrors.comment}}</mat-error>
+        </mat-form-field>
+      </p>
+
+      <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
+     </form>
+     
+  </div>  
+
 
   <div fxFlex [hidden]="dish">
   <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
