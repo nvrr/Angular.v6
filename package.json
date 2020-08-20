@@ -26,6 +26,8 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
+    "ngx-content-loading": "^0.1.3",
+    "node": "^10.14.1",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
@@ -37,6 +39,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "chromedriver": "^84.0.1",
     "codelyzer": "~4.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
